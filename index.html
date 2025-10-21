@@ -1,0 +1,1051 @@
+<div class="logo" onclick="showHome()">
+                <div class="logo-fallback"></div>
+            </div><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Via Nata - Accompagnement PMA & Parentalité</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6d3e47;
+            --primary-dark: #5a3139;
+            --secondary: #d4c4cc;
+            --accent: #9b6b76;
+            --light: #e8dde3;
+            --white: #f5f0f2;
+            --bg-main: #e3d4d9;
+            --text: #6d3e47;
+            --text-light: #8a6670;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg-main);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        header {
+            background: rgba(245, 240, 242, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(109, 62, 71, 0.1);
+            border-bottom: 1px solid rgba(109, 62, 71, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            height: 60px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            max-width: 300px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-fallback {
+            height: 50px;
+            width: 300px;
+            background: url('https://i.imgur.com/v5fb5S1.png') no-repeat center;
+            background-size: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(227, 212, 217, 0.7), rgba(245, 240, 242, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23e3d4d9" width="1200" height="800"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+            border: 1px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .section {
+            padding: 6rem 3rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-weight: 300;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 5rem;
+            color: var(--text-light);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .breadcrumb {
+            padding: 2rem 3rem;
+            background: var(--light);
+            margin-top: 80px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            overflow: hidden;
+            transition: transform 0.5s;
+            cursor: pointer;
+            border: 1px solid rgba(109, 62, 71, 0.15);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(109, 62, 71, 0.15);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-image.pma-image {
+            background: linear-gradient(135deg, #d4e8f0 0%, #e8dfe8 100%);
+        }
+
+        .category-image.pma-image::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 8px solid rgba(109, 62, 71, 0.3);
+            box-shadow: 0 0 40px rgba(109, 62, 71, 0.1);
+            background: radial-gradient(circle, rgba(255, 220, 200, 0.6) 0%, rgba(255, 240, 230, 0.3) 100%);
+        }
+
+        .category-image.pma-image::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(109, 62, 71, 0.4) 0%, rgba(109, 62, 71, 0.6) 50%, rgba(109, 62, 71, 0.3) 100%);
+            border-radius: 10px;
+            transform: rotate(-35deg);
+            left: 45%;
+            top: -20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-content {
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .category-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        .category-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .specialty-card {
+            background: var(--white);
+            padding: 3rem;
+            border: 1px solid rgba(109, 62, 71, 0.15);
+            transition: all 0.4s;
+            cursor: pointer;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .specialty-card:hover {
+            border-color: var(--primary);
+            background: var(--light);
+            box-shadow: 0 8px 25px rgba(109, 62, 71, 0.12);
+        }
+
+        .specialty-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .specialty-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        .specialty-info p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .specialty-count {
+            font-size: 0.85rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .professionals-section {
+            background: var(--light);
+            padding: 6rem 3rem;
+        }
+
+        .pro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .pro-card {
+            background: var(--white);
+            overflow: hidden;
+            border: 1px solid rgba(109, 62, 71, 0.15);
+            transition: all 0.4s;
+        }
+
+        .pro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(109, 62, 71, 0.15);
+        }
+
+        .pro-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pro-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            border: 3px solid var(--white);
+        }
+
+        .pro-content {
+            padding: 2.5rem;
+        }
+
+        .pro-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        .pro-specialty {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .pro-location {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .pro-rating {
+            color: var(--primary);
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .pro-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .tag {
+            background: var(--light);
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text);
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(109, 62, 71, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 1rem 2rem;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .about-section {
+            background: var(--white);
+            padding: 8rem 3rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .about-item {
+            text-align: center;
+        }
+
+        .about-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        .about-item p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        footer {
+            background: var(--text);
+            color: var(--light);
+            padding: 5rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            font-weight: 400;
+            font-size: 1.4rem;
+        }
+
+        .footer-section p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--light);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--light);
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 64, 56, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 4rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.3s;
+            font-weight: 300;
+        }
+
+        .close-modal:hover {
+            color: var(--text);
+        }
+
+        .modal h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            font-size: 2.5rem;
+        }
+
+        .calendly-container {
+            margin-top: 2rem;
+            min-height: 500px;
+            border: 1px solid var(--secondary);
+            padding: 3rem;
+            background: var(--light);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calendly-container p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pro-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .categories-grid,
+            .pro-grid,
+            .about-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav, .section, .professionals-section, .about-section, footer {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" onclick="showHome()">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAGQCAYAAACtss93AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAELeSURBVHgB7N0JfFTV/T/+z5nJvu8bAQIh7LtAEUFBEVBxQcWtLlW72Lq09VeXWpe6VKt1r7ZqrVattVqpC4gssgkoOwQICSEkJCHbZJ1k5v7/5ySEAAkZMslkkvf79XoBcufemTvJPXPu537O5ygAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOh5JgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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" alt="Via Nata" class="logo-img">
+            </div>
+            <ul>
+                <li><a onclick="showHome()">Accueil</a></li>
+                <li><a onclick="showSection('categories')">Accompagnements</a></li>
+                <li><a onclick="showSection('apropos')">Qui sommes-nous</a></li>
+                <li><a onclick="openModal()">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page d'accueil -->
+    <div id="homePage">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Votre accompagnement vers la vie</h1>
+                <p>Douceur et bienveillance à l'honneur.<br>Plongez dans cet accompagnement unique.</p>
+                <button class="btn-primary" onclick="showSection('categories')">Découvrir nos accompagnements</button>
+            </div>
+        </section>
+
+        <section class="section" id="categories">
+            <div class="container">
+                <h2 class="section-title">Nos accompagnements</h2>
+                <p class="section-subtitle">Chaque parcours est unique, et c'est cette singularité que nous célébrons</p>
+                
+                <div class="categories-grid">
+                    <div class="category-card" onclick="showCategory('pma')">
+                        <div class="category-image">🏥</div>
+                        <div class="category-content">
+                            <h3>PMA & Fertilité</h3>
+                            <p>Un accompagnement médical et émotionnel tout au long de votre parcours vers la parentalité</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card" onclick="showCategory('grossesse')">
+                        <div class="category-image">🤰</div>
+                        <div class="category-content">
+                            <h3>Suivi de grossesse</h3>
+                            <p>Un suivi personnalisé et bienveillant pour vivre sereinement votre grossesse</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card" onclick="showCategory('bienetre')">
+                        <div class="category-image">🧘</div>
+                        <div class="category-content">
+                            <h3>Bien-être périnatal</h3>
+                            <p>Des pratiques douces pour vous accompagner vers l'harmonie et la sérénité</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card" onclick="showCategory('accompagnement')">
+                        <div class="category-image">💆</div>
+                        <div class="category-content">
+                            <h3>Accompagnement global</h3>
+                            <p>Un soutien holistique pour votre corps et votre esprit pendant cette période unique</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card" onclick="showCategory('psychologie')">
+                        <div class="category-image">🧠</div>
+                        <div class="category-content">
+                            <h3>Soutien psychologique</h3>
+                            <p>Un espace d'écoute et de parole pour traverser cette aventure émotionnelle</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card" onclick="showCategory('postpartum')">
+                        <div class="category-image">👶</div>
+                        <div class="category-content">
+                            <h3>Post-partum</h3>
+                            <p>Un accompagnement tendre pour accueillir bébé et prendre soin de vous</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="apropos">
+            <div class="container">
+                <h2 class="section-title">Pourquoi nous choisir</h2>
+                <p class="section-subtitle">Parce que votre parcours mérite un accompagnement d'exception</p>
+                
+                <div class="about-grid">
+                    <div class="about-item">
+                        <div class="about-icon">✨</div>
+                        <h3>Professionnels qualifiés</h3>
+                        <p>Des experts passionnés, formés et dévoués à votre bien-être</p>
+                    </div>
+
+                    <div class="about-item">
+                        <div class="about-icon">🤝</div>
+                        <h3>Accompagnement sur mesure</h3>
+                        <p>Chaque famille est unique, chaque accompagnement est personnalisé</p>
+                    </div>
+
+                    <div class="about-item">
+                        <div class="about-icon">💫</div>
+                        <h3>Bienveillance</h3>
+                        <p>Un cadre chaleureux et rassurant pour vous sentir en confiance</p>
+                    </div>
+
+                    <div class="about-item">
+                        <div class="about-icon">🌿</div>
+                        <h3>Approche holistique</h3>
+                        <p>Une vision globale de votre santé physique et émotionnelle</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page catégorie -->
+    <div id="categoryPage" class="hidden">
+        <div class="breadcrumb">
+            <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp; <span id="breadcrumbCategory"></span>
+        </div>
+        
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" id="categoryTitle"></h2>
+                <div class="specialties-grid" id="specialtiesList"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page liste professionnels -->
+    <div id="professionalsPage" class="hidden">
+        <div class="breadcrumb">
+            <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp; 
+            <a onclick="goBackToCategory()" id="breadcrumbCat2"></a> &nbsp;/&nbsp; 
+            <span id="breadcrumbSpecialty"></span>
+        </div>
+        
+        <section class="professionals-section">
+            <div class="container">
+                <h2 class="section-title" id="specialtyTitle"></h2>
+                <div class="pro-grid" id="prosList"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Via Nata</h3>
+                <p>Votre plateforme de référence pour l'accompagnement vers la parentalité. Douceur, bienveillance et expertise.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#" onclick="showHome()">Accueil</a></li>
+                    <li><a href="#" onclick="showSection('categories')">Nos accompagnements</a></li>
+                    <li><a href="#">Devenir partenaire</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>contact@vianata.fr</p>
+                <p>01 23 45 67 89</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Via Nata - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Prendre rendez-vous</h2>
+            <p id="proName" style="color: var(--primary); margin-bottom: 2rem; font-size: 1.1rem;"></p>
+            
+            <div class="calendly-container">
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Intégration avec votre outil de planning</p>
+                    <p style="font-size: 0.95rem;">Compatible avec Calendly, Cal.com, Simplybook.me</p>
+                    <p style="font-size: 0.9rem; margin-top: 1.5rem;">Chaque professionnel pourra connecter son propre agenda</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const categories = {
+            pma: {
+                title: "PMA & Fertilité",
+                specialties: [
+                    {icon: "👨‍⚕️", name: "Gynécologues spécialisés PMA", description: "Médecins spécialistes de la reproduction et fertilité", count: 124},
+                    {icon: "🔬", name: "Endocrinologues", description: "Spécialistes des troubles hormonaux et fertilité", count: 67},
+                    {icon: "🏥", name: "Centres PMA", description: "Cliniques et centres spécialisés en procréation assistée", count: 45},
+                    {icon: "🧬", name: "Biologistes de la reproduction", description: "Experts en fécondation in vitro et analyses", count: 32},
+                    {icon: "💉", name: "Andrologues", description: "Spécialistes de la fertilité masculine", count: 28},
+                    {icon: "🩺", name: "Urologues", description: "Médecins spécialisés en santé reproductive masculine", count: 56}
+                ]
+            },
+            grossesse: {
+                title: "Suivi de grossesse",
+                specialties: [
+                    {icon: "👶", name: "Sages-femmes", description: "Accompagnement global de la grossesse et accouchement", count: 342},
+                    {icon: "👨‍⚕️", name: "Gynécologues obstétriciens", description: "Suivi médical de la grossesse", count: 198},
+                    {icon: "📸", name: "Échographistes", description: "Spécialistes des échographies prénatales", count: 156},
+                    {icon: "🥗", name: "Nutritionnistes périnatal", description: "Conseils alimentaires durant la grossesse", count: 89}
+                ]
+            },
+            bienetre: {
+                title: "Bien-être périnatal",
+                specialties: [
+                    {icon: "🌸", name: "Sophrologues", description: "Relaxation et préparation à l'accouchement", count: 167},
+                    {icon: "✨", name: "Hypnothérapeutes", description: "Hypnose périnatale et gestion de la douleur", count: 98},
+                    {icon: "🧘‍♀️", name: "Professeurs de yoga prénatal", description: "Yoga adapté à la grossesse", count: 143},
+                    {icon: "💆", name: "Réflexologues", description: "Massages et points de pression", count: 112}
+                ]
+            },
+            accompagnement: {
+                title: "Accompagnement global",
+                specialties: [
+                    {icon: "🤱", name: "Doulas", description: "Accompagnement émotionnel et pratique", count: 156},
+                    {icon: "🦴", name: "Ostéopathes", description: "Soulagement des maux de grossesse", count: 234},
+                    {icon: "📍", name: "Acupuncteurs", description: "Médecine traditionnelle chinoise", count: 178},
+                    {icon: "💪", name: "Kinésithérapeutes", description: "Rééducation périnéale et préparation", count: 298}
+                ]
+            },
+            psychologie: {
+                title: "Soutien psychologique",
+                specialties: [
+                    {icon: "💭", name: "Psychologues périnataux", description: "Accompagnement psychologique spécialisé", count: 189},
+                    {icon: "👥", name: "Thérapeutes de couple", description: "Soutien du couple pendant la PMA et grossesse", count: 124},
+                    {icon: "💔", name: "Spécialistes du deuil périnatal", description: "Accompagnement après une perte", count: 67},
+                    {icon: "🎭", name: "Art-thérapeutes", description: "Expression émotionnelle par l'art", count: 45}
+                ]
+            },
+            postpartum: {
+                title: "Post-partum",
+                specialties: [
+                    {icon: "👶", name: "Pédiatres", description: "Suivi médical du nourrisson", count: 456},
+                    {icon: "🍼", name: "Consultantes en lactation", description: "Accompagnement de l'allaitement", count: 167},
+                    {icon: "💪", name: "Kinés rééducation périnéale", description: "Rééducation après accouchement", count: 289},
+                    {icon: "😴", name: "Consultants sommeil bébé", description: "Aide au sommeil du nourrisson", count: 78}
+                ]
+            }
+        };
+
+        const professionalsBySpecialty = {
+            "Gynécologues spécialisés PMA": [
+                {initials: "DC", name: "Dr. Claire Dubois", specialty: "Gynécologue - Spécialiste PMA", location: "Paris 15ème", rating: 5, reviews: 48, tags: ["FIV", "Insémination", "Consultations"]},
+                {initials: "PM", name: "Dr. Pierre Martin", specialty: "Gynécologue - PMA", location: "Lyon 3ème", rating: 5, reviews: 62, tags: ["FIV", "ICSI", "Bilan fertilité"]}
+            ],
+            "Sages-femmes": [
+                {initials: "ML", name: "Marie Leroux", specialty: "Sage-femme", location: "Lyon 6ème", rating: 5, reviews: 92, tags: ["Suivi grossesse", "Préparation naissance", "Domicile"]},
+                {initials: "JD", name: "Julie Dupont", specialty: "Sage-femme libérale", location: "Bordeaux Centre", rating: 5, reviews: 78, tags: ["Accouchement", "Post-partum", "Allaitement"]}
+            ],
+            "Sophrologues": [
+                {initials: "LM", name: "Laura Moreau", specialty: "Sophrologue", location: "Lille Centre", rating: 5, reviews: 74, tags: ["Préparation accouchement", "Relaxation", "Groupes"]}
+            ],
+            "Hypnothérapeutes": [
+                {initials: "SB", name: "Sophie Bernard", specialty: "Hypnothérapeute", location: "Bordeaux Centre", rating: 5, reviews: 67, tags: ["Hypnose périnatale", "Gestion stress", "Téléconsultation"]}
+            ],
+            "Doulas": [
+                {initials: "AM", name: "Anne Martin", specialty: "Doula certifiée", location: "Nantes Nord", rating: 5, reviews: 56, tags: ["Accompagnement global", "Post-natal", "Écoute"]}
+            ],
+            "Psychologues périnataux": [
+                {initials: "PD", name: "Pierre Durand", specialty: "Psychologue périnatal", location: "Toulouse Capitole", rating: 5, reviews: 83, tags: ["Soutien PMA", "Couples", "Post-partum"]}
+            ]
+        };
+
+        let currentCategory = null;
+        let currentSpecialty = null;
+
+        function showHome() {
+            document.getElementById('homePage').classList.remove('hidden');
+            document.getElementById('categoryPage').classList.add('hidden');
+            document.getElementById('professionalsPage').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function showSection(sectionId) {
+            showHome();
+            setTimeout(() => {
+                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function showCategory(categoryId) {
+            currentCategory = categoryId;
+            const category = categories[categoryId];
+            
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('categoryPage').classList.remove('hidden');
+            document.getElementById('professionalsPage').classList.add('hidden');
+            
+            document.getElementById('breadcrumbCategory').textContent = category.title;
+            document.getElementById('categoryTitle').textContent = category.title;
+            
+            const specialtiesList = document.getElementById('specialtiesList');
+            specialtiesList.innerHTML = '';
+            
+            category.specialties.forEach(specialty => {
+                const card = document.createElement('div');
+                card.className = 'specialty-card';
+                card.onclick = () => showProfessionals(specialty.name);
+                card.innerHTML = `
+                    <div class="specialty-icon">${specialty.icon}</div>
+                    <div class="specialty-info">
+                        <h3>${specialty.name}</h3>
+                        <p>${specialty.description}</p>
+                        <div class="specialty-count">${specialty.count} professionnels disponibles</div>
+                    </div>
+                `;
+                specialtiesList.appendChild(card);
+            });
+            
+            window.scrollTo(0, 0);
+        }
+
+        function showProfessionals(specialtyName) {
+            currentSpecialty = specialtyName;
+            
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('categoryPage').classList.add('hidden');
+            document.getElementById('professionalsPage').classList.remove('hidden');
+            
+            document.getElementById('breadcrumbCat2').textContent = categories[currentCategory].title;
+            document.getElementById('breadcrumbSpecialty').textContent = specialtyName;
+            document.getElementById('specialtyTitle').textContent = specialtyName;
+            
+            const prosList = document.getElementById('prosList');
+            prosList.innerHTML = '';
+            
+            const professionals = professionalsBySpecialty[specialtyName] || [];
+            
+            if (professionals.length === 0) {
+                prosList.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
+                        <p style="font-size: 1.2rem; color: var(--text-light); font-weight: 300;">Professionnels à venir dans cette catégorie</p>
+                        <p style="color: var(--text-light); margin-top: 1rem; font-weight: 300;">Nous enrichissons régulièrement notre annuaire</p>
+                    </div>
+                `;
+            } else {
+                professionals.forEach(pro => {
+                    const card = document.createElement('div');
+                    card.className = 'pro-card';
+                    card.innerHTML = `
+                        <div class="pro-image">
+                            <div class="pro-avatar">${pro.initials}</div>
+                        </div>
+                        <div class="pro-content">
+                            <h3>${pro.name}</h3>
+                            <div class="pro-specialty">${pro.specialty}</div>
+                            <div class="pro-location">📍 ${pro.location}</div>
+                            <div class="pro-rating">${'⭐'.repeat(pro.rating)} (${pro.reviews} avis)</div>
+                            <div class="pro-tags">
+                                ${pro.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                            <button class="btn-secondary" onclick="openBooking('${pro.name}')">Prendre rendez-vous</button>
+                        </div>
+                    `;
+                    prosList.appendChild(card);
+                });
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        function goBackToCategory() {
+            if (currentCategory) {
+                showCategory(currentCategory);
+            }
+        }
+
+        function openModal() {
+            document.getElementById('bookingModal').style.display = 'flex';
+            document.getElementById('proName').textContent = 'Nous contacter';
+        }
+
+        function openBooking(proName) {
+            document.getElementById('bookingModal').style.display = 'flex';
+            document.getElementById('proName').textContent = 'Rendez-vous avec ' + proName;
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
