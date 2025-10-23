@@ -1,8 +1,4 @@
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +40,7 @@
         header {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
+            padding: 0.5rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -66,11 +62,11 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            height: 60px;
+            height: 70px;
         }
 
         .logo img {
-            height: 50px;
+            height: 60px;
             width: auto;
             object-fit: contain;
         }
@@ -261,7 +257,7 @@
         .blog-meta {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: space-between;
             font-size: 0.85rem;
             color: var(--text-light);
         }
@@ -278,6 +274,12 @@
 
         .read-more:hover {
             gap: 1rem;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
         }
 
         .category-card {
@@ -304,6 +306,13 @@
             justify-content: center;
             font-size: 5rem;
             border-radius: 30px 30px 0 0;
+            overflow: hidden;
+        }
+
+        .category-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .category-content {
@@ -732,10 +741,10 @@
                         <div class="blog-content">
                             <span class="blog-category">Accompagnement</span>
                             <h3>Le rôle de la doula : un soutien précieux</h3>
-                            <p class="blog-excerpt">La doula est une professionnelle qui accompagne les futures et jeunes mères de manière non médicale. Elle offre un soutien émotionnel, physique et informationnel continu avant, pendant et après l'accouchement...</p>
+                            <p class="blog-excerpt">La doula est une professionnelle qui accompagne les futures et jeunes mères de manière non médicale. Elle offre un soutien émotionnel, physique et informationnel continu...</p>
                             <div class="blog-meta">
-                                <span>📅 8 min de lecture</span>
-                                <a href="#" class="read-more">Lire l'article →</a>
+                                <span>📅 8 min</span>
+                                <a href="#" class="read-more">Lire →</a>
                             </div>
                         </div>
                     </div>
@@ -745,10 +754,10 @@
                         <div class="blog-content">
                             <span class="blog-category">PMA & Fertilité</span>
                             <h3>Le gynécologue spécialisé en PMA</h3>
-                            <p class="blog-excerpt">Découvrez comment le gynécologue spécialiste en PMA vous accompagne tout au long de votre parcours vers la parentalité, des premiers examens aux protocoles de FIV...</p>
+                            <p class="blog-excerpt">Découvrez comment le gynécologue spécialiste en PMA vous accompagne tout au long de votre parcours vers la parentalité...</p>
                             <div class="blog-meta">
-                                <span>📅 5 min de lecture</span>
-                                <a href="#" class="read-more">Lire l'article →</a>
+                                <span>📅 5 min</span>
+                                <a href="#" class="read-more">Lire →</a>
                             </div>
                         </div>
                     </div>
@@ -757,11 +766,11 @@
                         <div class="blog-image">🤰</div>
                         <div class="blog-content">
                             <span class="blog-category">Grossesse</span>
-                            <h3>La sage-femme : votre alliée pendant la grossesse</h3>
-                            <p class="blog-excerpt">Accompagnement global, préparation à la naissance, suivi post-natal... Tout savoir sur ce métier essentiel qui vous suit de A à Z...</p>
+                            <h3>La sage-femme : votre alliée</h3>
+                            <p class="blog-excerpt">Accompagnement global, préparation à la naissance, suivi post-natal... Tout savoir sur ce métier essentiel...</p>
                             <div class="blog-meta">
-                                <span>📅 7 min de lecture</span>
-                                <a href="#" class="read-more">Lire l'article →</a>
+                                <span>📅 7 min</span>
+                                <a href="#" class="read-more">Lire →</a>
                             </div>
                         </div>
                     </div>
@@ -770,11 +779,11 @@
                         <div class="blog-image">🧘</div>
                         <div class="blog-content">
                             <span class="blog-category">Bien-être</span>
-                            <h3>L'hypnose périnatale : un accompagnement en douceur</h3>
-                            <p class="blog-excerpt">Gestion du stress, préparation mentale, accouchement serein... Les bienfaits de l'hypnose pendant la grossesse et comment elle peut vous aider...</p>
+                            <h3>L'hypnose périnatale en douceur</h3>
+                            <p class="blog-excerpt">Gestion du stress, préparation mentale, accouchement serein... Les bienfaits de l'hypnose pendant la grossesse...</p>
                             <div class="blog-meta">
-                                <span>📅 6 min de lecture</span>
-                                <a href="#" class="read-more">Lire l'article →</a>
+                                <span>📅 6 min</span>
+                                <a href="#" class="read-more">Lire →</a>
                             </div>
                         </div>
                     </div>
@@ -783,11 +792,11 @@
                         <div class="blog-image">🧠</div>
                         <div class="blog-content">
                             <span class="blog-category">Psychologie</span>
-                            <h3>Le psychologue périnatal : un soutien essentiel</h3>
-                            <p class="blog-excerpt">Parcours PMA difficile, dépression post-partum, deuil périnatal... Quand et pourquoi consulter un psychologue spécialisé en périnatalité...</p>
+                            <h3>Le psychologue périnatal</h3>
+                            <p class="blog-excerpt">Parcours PMA difficile, dépression post-partum, deuil périnatal... Quand et pourquoi consulter...</p>
                             <div class="blog-meta">
-                                <span>📅 7 min de lecture</span>
-                                <a href="#" class="read-more">Lire l'article →</a>
+                                <span>📅 7 min</span>
+                                <a href="#" class="read-more">Lire →</a>
                             </div>
                         </div>
                     </div>
@@ -796,11 +805,11 @@
                         <div class="blog-image">👶</div>
                         <div class="blog-content">
                             <span class="blog-category">Post-partum</span>
-                            <h3>La consultante en lactation : pour un allaitement réussi</h3>
-                            <p class="blog-excerpt">Conseils personnalisés, résolution de difficultés, accompagnement bienveillant... Tout sur ce métier qui aide les mamans à vivre sereinement leur allaitement...</p>
+                            <h3>La consultante en lactation</h3>
+                            <p class="blog-excerpt">Conseils personnalisés, résolution de difficultés, accompagnement bienveillant pour votre allaitement...</p>
                             <div class="blog-meta">
-                                <span>📅 5 min de lecture</span>
-                                <a href="#" class="read-more">Lire l'article →</a>
+                                <span>📅 5 min</span>
+                                <a href="#" class="read-more">Lire →</a>
                             </div>
                         </div>
                     </div>
@@ -815,8 +824,8 @@
                 
                 <div class="categories-grid">
                     <div class="category-card" onclick="showCategory('pma')">
-                       <div class="category-image pma-image">
-                            <img src="logopmaa.png" alt="PMA & Fertilité" class="category-img"> 
+                        <div class="category-image">
+                            <img src="logopmaa.png" alt="PMA & Fertilité" class="category-img">
                         </div>
                         <div class="category-content">
                             <h3>PMA & Fertilité</h3>
@@ -825,7 +834,9 @@
                     </div>
 
                     <div class="category-card" onclick="showCategory('grossesse')">
-                        <div class="category-image">🤰</div>
+                        <div class="category-image">
+                            <img src="logogrossesse.png" alt="Suivi de grossesse" class="category-img">
+                        </div>
                         <div class="category-content">
                             <h3>Suivi de grossesse</h3>
                             <p>Un suivi personnalisé et bienveillant pour vivre sereinement votre grossesse</p>
@@ -833,7 +844,9 @@
                     </div>
 
                     <div class="category-card" onclick="showCategory('bienetre')">
-                        <div class="category-image">🧘</div>
+                        <div class="category-image">
+                            <img src="logobienetre.png" alt="Bien-être" class="category-img">
+                        </div>
                         <div class="category-content">
                             <h3>Bien-être périnatal</h3>
                             <p>Des pratiques douces pour vous accompagner vers l'harmonie et la sérénité</p>
@@ -841,7 +854,9 @@
                     </div>
 
                     <div class="category-card" onclick="showCategory('accompagnement')">
-                        <div class="category-image">💆</div>
+                        <div class="category-image">
+                            <img src="logoaccompagnement.png" alt="Accompagnement" class="category-img">
+                        </div>
                         <div class="category-content">
                             <h3>Accompagnement global</h3>
                             <p>Un soutien holistique pour votre corps et votre esprit pendant cette période unique</p>
@@ -849,7 +864,9 @@
                     </div>
 
                     <div class="category-card" onclick="showCategory('psychologie')">
-                        <div class="category-image">🧠</div>
+                        <div class="category-image">
+                            <img src="logosoutien.png" alt="Soutien psychologique" class="category-img">
+                        </div>
                         <div class="category-content">
                             <h3>Soutien psychologique</h3>
                             <p>Un espace d'écoute et de parole pour traverser cette aventure émotionnelle</p>
@@ -875,318 +892,3 @@
                 <div class="about-grid">
                     <div class="about-item">
                         <div class="about-icon">✨</div>
-                        <h3>Professionnels qualifiés</h3>
-                        <p>Des experts passionnés, formés et dévoués à votre bien-être</p>
-                    </div>
-
-                    <div class="about-item">
-                        <div class="about-icon">🤝</div>
-                        <h3>Accompagnement sur mesure</h3>
-                        <p>Chaque famille est unique, chaque accompagnement est personnalisé</p>
-                    </div>
-
-                    <div class="about-item">
-                        <div class="about-icon">💫</div>
-                        <h3>Bienveillance</h3>
-                        <p>Un cadre chaleureux et rassurant pour vous sentir en confiance</p>
-                    </div>
-
-                    <div class="about-item">
-                        <div class="about-icon">🌿</div>
-                        <h3>Approche holistique</h3>
-                        <p>Une vision globale de votre santé physique et émotionnelle</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="categoryPage" class="hidden">
-        <div class="breadcrumb">
-            <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp; <span id="breadcrumbCategory"></span>
-        </div>
-        
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title" id="categoryTitle"></h2>
-                <div class="specialties-grid" id="specialtiesList"></div>
-            </div>
-        </section>
-    </div>
-
-    <div id="professionalsPage" class="hidden">
-        <div class="breadcrumb">
-            <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp; 
-            <a onclick="goBackToCategory()" id="breadcrumbCat2"></a> &nbsp;/&nbsp; 
-            <span id="breadcrumbSpecialty"></span>
-        </div>
-        
-        <section class="professionals-section">
-            <div class="container">
-                <h2 class="section-title" id="specialtyTitle"></h2>
-                <div class="pro-grid" id="prosList"></div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Via Nata</h3>
-                <p>Votre plateforme de référence pour l'accompagnement vers la parentalité. Douceur, bienveillance et expertise.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="#" onclick="showSection('blog')">Nos accompagnements</a></li>
-                    <li><a href="#" onclick="showSection('trouver-pro')">Trouver un professionnel</a></li>
-                    <li><a href="#">Devenir partenaire</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Informations</h3>
-                <ul>
-                    <li><a href="#">Mentions légales</a></li>
-                    <li><a href="#">Conditions générales</a></li>
-                    <li><a href="#">Politique de confidentialité</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>contact@vianata.fr</p>
-                <p>01 23 45 67 89</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Via Nata - Tous droits réservés</p>
-        </div>
-    </footer>
-
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2>Prendre rendez-vous</h2>
-            <p id="proName" style="color: var(--primary); margin-bottom: 2rem; font-size: 1.1rem;"></p>
-            
-            <div class="calendly-container">
-                <div>
-                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Intégration avec votre outil de planning</p>
-                    <p style="font-size: 0.95rem;">Compatible avec Calendly, Cal.com, Simplybook.me</p>
-                    <p style="font-size: 0.9rem; margin-top: 1.5rem;">Chaque professionnel pourra connecter son propre agenda</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const categories = {
-            pma: {
-                title: "PMA & Fertilité",
-                specialties: [
-                    {icon: "👨‍⚕️", name: "Gynécologues spécialisés PMA", description: "Médecins spécialistes de la reproduction et fertilité", count: 124},
-                    {icon: "🔬", name: "Endocrinologues", description: "Spécialistes des troubles hormonaux et fertilité", count: 67},
-                    {icon: "🏥", name: "Centres PMA", description: "Cliniques et centres spécialisés en procréation assistée", count: 45},
-                    {icon: "🧬", name: "Biologistes de la reproduction", description: "Experts en fécondation in vitro et analyses", count: 32},
-                    {icon: "💉", name: "Andrologues", description: "Spécialistes de la fertilité masculine", count: 28},
-                    {icon: "🩺", name: "Urologues", description: "Médecins spécialisés en santé reproductive masculine", count: 56}
-                ]
-            },
-            grossesse: {
-                title: "Suivi de grossesse",
-                specialties: [
-                    {icon: "👶", name: "Sages-femmes", description: "Accompagnement global de la grossesse et accouchement", count: 342},
-                    {icon: "👨‍⚕️", name: "Gynécologues obstétriciens", description: "Suivi médical de la grossesse", count: 198},
-                    {icon: "📸", name: "Échographistes", description: "Spécialistes des échographies prénatales", count: 156},
-                    {icon: "🥗", name: "Nutritionnistes périnatal", description: "Conseils alimentaires durant la grossesse", count: 89}
-                ]
-            },
-            bienetre: {
-                title: "Bien-être périnatal",
-                specialties: [
-                    {icon: "🌸", name: "Sophrologues", description: "Relaxation et préparation à l'accouchement", count: 167},
-                    {icon: "✨", name: "Hypnothérapeutes", description: "Hypnose périnatale et gestion de la douleur", count: 98},
-                    {icon: "🧘‍♀️", name: "Professeurs de yoga prénatal", description: "Yoga adapté à la grossesse", count: 143},
-                    {icon: "💆", name: "Réflexologues", description: "Massages et points de pression", count: 112}
-                ]
-            },
-            accompagnement: {
-                title: "Accompagnement global",
-                specialties: [
-                    {icon: "🤱", name: "Doulas", description: "Accompagnement émotionnel et pratique", count: 156},
-                    {icon: "🦴", name: "Ostéopathes", description: "Soulagement des maux de grossesse", count: 234},
-                    {icon: "📍", name: "Acupuncteurs", description: "Médecine traditionnelle chinoise", count: 178},
-                    {icon: "💪", name: "Kinésithérapeutes", description: "Rééducation périnéale et préparation", count: 298}
-                ]
-            },
-            psychologie: {
-                title: "Soutien psychologique",
-                specialties: [
-                    {icon: "💭", name: "Psychologues périnataux", description: "Accompagnement psychologique spécialisé", count: 189},
-                    {icon: "👥", name: "Thérapeutes de couple", description: "Soutien du couple pendant la PMA et grossesse", count: 124},
-                    {icon: "💔", name: "Spécialistes du deuil périnatal", description: "Accompagnement après une perte", count: 67},
-                    {icon: "🎭", name: "Art-thérapeutes", description: "Expression émotionnelle par l'art", count: 45}
-                ]
-            },
-            postpartum: {
-                title: "Post-partum",
-                specialties: [
-                    {icon: "👶", name: "Pédiatres", description: "Suivi médical du nourrisson", count: 456},
-                    {icon: "🍼", name: "Consultantes en lactation", description: "Accompagnement de l'allaitement", count: 167},
-                    {icon: "💪", name: "Kinés rééducation périnéale", description: "Rééducation après accouchement", count: 289},
-                    {icon: "😴", name: "Consultants sommeil bébé", description: "Aide au sommeil du nourrisson", count: 78}
-                ]
-            }
-        };
-
-        const professionalsBySpecialty = {
-            "Gynécologues spécialisés PMA": [
-                {initials: "DC", name: "Dr. Claire Dubois", specialty: "Gynécologue - Spécialiste PMA", location: "Paris 15ème", rating: 5, reviews: 48, tags: ["FIV", "Insémination", "Consultations"]},
-                {initials: "PM", name: "Dr. Pierre Martin", specialty: "Gynécologue - PMA", location: "Lyon 3ème", rating: 5, reviews: 62, tags: ["FIV", "ICSI", "Bilan fertilité"]}
-            ],
-            "Sages-femmes": [
-                {initials: "ML", name: "Marie Leroux", specialty: "Sage-femme", location: "Lyon 6ème", rating: 5, reviews: 92, tags: ["Suivi grossesse", "Préparation naissance", "Domicile"]},
-                {initials: "JD", name: "Julie Dupont", specialty: "Sage-femme libérale", location: "Bordeaux Centre", rating: 5, reviews: 78, tags: ["Accouchement", "Post-partum", "Allaitement"]}
-            ],
-            "Sophrologues": [
-                {initials: "LM", name: "Laura Moreau", specialty: "Sophrologue", location: "Lille Centre", rating: 5, reviews: 74, tags: ["Préparation accouchement", "Relaxation", "Groupes"]}
-            ],
-            "Hypnothérapeutes": [
-                {initials: "SB", name: "Sophie Bernard", specialty: "Hypnothérapeute", location: "Bordeaux Centre", rating: 5, reviews: 67, tags: ["Hypnose périnatale", "Gestion stress", "Téléconsultation"]}
-            ],
-            "Doulas": [
-                {initials: "AM", name: "Anne Martin", specialty: "Doula certifiée", location: "Nantes Nord", rating: 5, reviews: 56, tags: ["Accompagnement global", "Post-natal", "Écoute"]}
-            ],
-            "Psychologues périnataux": [
-                {initials: "PD", name: "Pierre Durand", specialty: "Psychologue périnatal", location: "Toulouse Capitole", rating: 5, reviews: 83, tags: ["Soutien PMA", "Couples", "Post-partum"]}
-            ]
-        };
-
-        let currentCategory = null;
-        let currentSpecialty = null;
-
-        function showHome() {
-            document.getElementById('homePage').classList.remove('hidden');
-            document.getElementById('categoryPage').classList.add('hidden');
-            document.getElementById('professionalsPage').classList.add('hidden');
-            window.scrollTo(0, 0);
-        }
-
-        function showSection(sectionId) {
-            showHome();
-            setTimeout(() => {
-                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }
-
-        function showCategory(categoryId) {
-            currentCategory = categoryId;
-            const category = categories[categoryId];
-            
-            document.getElementById('homePage').classList.add('hidden');
-            document.getElementById('categoryPage').classList.remove('hidden');
-            document.getElementById('professionalsPage').classList.add('hidden');
-            
-            document.getElementById('breadcrumbCategory').textContent = category.title;
-            document.getElementById('categoryTitle').textContent = category.title;
-            
-            const specialtiesList = document.getElementById('specialtiesList');
-            specialtiesList.innerHTML = '';
-            
-            category.specialties.forEach(specialty => {
-                const card = document.createElement('div');
-                card.className = 'specialty-card';
-                card.onclick = () => showProfessionals(specialty.name);
-                card.innerHTML = `
-                    <div class="specialty-icon">${specialty.icon}</div>
-                    <div class="specialty-info">
-                        <h3>${specialty.name}</h3>
-                        <p>${specialty.description}</p>
-                        <div class="specialty-count">${specialty.count} professionnels disponibles</div>
-                    </div>
-                `;
-                specialtiesList.appendChild(card);
-            });
-            
-            window.scrollTo(0, 0);
-        }
-
-        function showProfessionals(specialtyName) {
-            currentSpecialty = specialtyName;
-            
-            document.getElementById('homePage').classList.add('hidden');
-            document.getElementById('categoryPage').classList.add('hidden');
-            document.getElementById('professionalsPage').classList.remove('hidden');
-            
-            document.getElementById('breadcrumbCat2').textContent = categories[currentCategory].title;
-            document.getElementById('breadcrumbSpecialty').textContent = specialtyName;
-            document.getElementById('specialtyTitle').textContent = specialtyName;
-            
-            const prosList = document.getElementById('prosList');
-            prosList.innerHTML = '';
-            
-            const professionals = professionalsBySpecialty[specialtyName] || [];
-            
-            if (professionals.length === 0) {
-                prosList.innerHTML = `
-                    <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
-                        <p style="font-size: 1.2rem; color: var(--text-light); font-weight: 300;">Professionnels à venir dans cette catégorie</p>
-                        <p style="color: var(--text-light); margin-top: 1rem; font-weight: 300;">Nous enrichissons régulièrement notre annuaire</p>
-                    </div>
-                `;
-            } else {
-                professionals.forEach(pro => {
-                    const card = document.createElement('div');
-                    card.className = 'pro-card';
-                    card.innerHTML = `
-                        <div class="pro-image">
-                            <div class="pro-avatar">${pro.initials}</div>
-                        </div>
-                        <div class="pro-content">
-                            <h3>${pro.name}</h3>
-                            <div class="pro-specialty">${pro.specialty}</div>
-                            <div class="pro-location">📍 ${pro.location}</div>
-                            <div class="pro-rating">${'⭐'.repeat(pro.rating)} (${pro.reviews} avis)</div>
-                            <div class="pro-tags">
-                                ${pro.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                            </div>
-                            <button class="btn-secondary" onclick="openBooking('${pro.name}')">Prendre rendez-vous</button>
-                        </div>
-                    `;
-                    prosList.appendChild(card);
-                });
-            }
-            
-            window.scrollTo(0, 0);
-        }
-
-        function goBackToCategory() {
-            if (currentCategory) {
-                showCategory(currentCategory);
-            }
-        }
-
-        function openModal() {
-            document.getElementById('bookingModal').style.display = 'flex';
-            document.getElementById('proName').textContent = 'Nous contacter';
-        }
-
-        function openBooking(proName) {
-            document.getElementById('bookingModal').style.display = 'flex';
-            document.getElementById('proName').textContent = 'Rendez-vous avec ' + proName;
-        }
-
-        function closeModal() {
-            document.getElementById('bookingModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('bookingModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-    </script>
-</body>
-</html>
