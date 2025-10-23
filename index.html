@@ -1,10 +1,8 @@
-<div class="logo" onclick="showHome()">
-    <img 
-        src="logovianata.png" 
-        alt="Logo Via Nata" 
-        class="logo-img"
-    >
-</div>
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -19,15 +17,15 @@
         }
 
         :root {
-            --primary: #8A394C;
-            --primary-dark: #6D2E3B;
-            --secondary: #D4C4CC;
-            --accent: #C792A1;
-            --light: #F8F4F5;
+            --primary: #8A7B6F;
+            --primary-dark: #6D5F54;
+            --secondary: #E8E3DF;
+            --accent: #B8AFA5;
+            --light: #F8F6F4;
             --white: #FFFFFF;
-            --bg-main: #EFE8E9;
-            --text: #4D2C34;
-            --text-light: #825763;
+            --bg-main: #FFFFFF;
+            --text: #4A4038;
+            --text-light: #8A7A70;
         }
 
         body {
@@ -44,15 +42,15 @@
         }
 
         header {
-            background: rgba(245, 240, 242, 0.98);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            padding: 0.05rem 0;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 1px 3px rgba(109, 62, 71, 0.1);
-            border-bottom: 1px solid rgba(109, 62, 71, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(138, 123, 111, 0.1);
         }
 
         nav {
@@ -65,17 +63,18 @@
         }
 
         .logo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    height: 100px; 
-}
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            height: 60px;
+        }
 
-.logo img {
-    height: 100px; 
-    width: auto;
-    object-fit: contain;
-}
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -99,10 +98,7 @@
 
         .hero {
             height: 90vh;
-            background: linear-gradient(rgba(227, 212, 217, 0.7), rgba(245, 240, 242, 0.9)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23e3d4d9" width="1200" height="800"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #F8F6F4 0%, #FFFFFF 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -144,12 +140,13 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 400;
-            border: 1px solid var(--primary);
+            border-radius: 50px;
         }
 
         .btn-primary:hover {
-            background: transparent;
-            color: var(--primary);
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .section {
@@ -197,24 +194,105 @@
             text-decoration: underline;
         }
 
-        .categories-grid {
+        .blog-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
             margin-top: 4rem;
         }
 
+        .blog-card {
+            background: var(--white);
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid var(--secondary);
+            border-radius: 25px;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border-radius: 25px 25px 0 0;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
         .category-card {
             background: var(--white);
             overflow: hidden;
-            transition: transform 0.5s;
+            transition: transform 0.5s, box-shadow 0.3s;
             cursor: pointer;
-            border: 1px solid rgba(109, 62, 71, 0.15);
+            border: 1px solid var(--secondary);
+            border-radius: 30px;
         }
 
         .category-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(109, 62, 71, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
         }
 
         .category-image {
@@ -225,21 +303,8 @@
             align-items: center;
             justify-content: center;
             font-size: 5rem;
-            position: relative;
-            overflow: hidden;
+            border-radius: 30px 30px 0 0;
         }
-
-        .category-image.pma-image {
-            background: linear-gradient(135deg, #d4e8f0 0%, #e1c5ae 100%);
-        }
-
-   .category-img {
-    width: 400px;        
-    height: 400px;
-    object-fit: contain; 
-    z-index: 10;         
-    position: relative;
-}
 
         .category-content {
             padding: 2.5rem;
@@ -270,7 +335,8 @@
         .specialty-card {
             background: var(--white);
             padding: 3rem;
-            border: 1px solid rgba(109, 62, 71, 0.15);
+            border: 1px solid var(--secondary);
+            border-radius: 25px;
             transition: all 0.4s;
             cursor: pointer;
             display: flex;
@@ -281,7 +347,7 @@
         .specialty-card:hover {
             border-color: var(--primary);
             background: var(--light);
-            box-shadow: 0 8px 25px rgba(109, 62, 71, 0.12);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
         }
 
         .specialty-icon {
@@ -325,13 +391,14 @@
         .pro-card {
             background: var(--white);
             overflow: hidden;
-            border: 1px solid rgba(109, 62, 71, 0.15);
+            border: 1px solid var(--secondary);
+            border-radius: 25px;
             transition: all 0.4s;
         }
 
         .pro-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(109, 62, 71, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         }
 
         .pro-image {
@@ -341,6 +408,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 25px 25px 0 0;
         }
 
         .pro-avatar {
@@ -400,7 +468,8 @@
             font-size: 0.8rem;
             color: var(--text);
             letter-spacing: 0.5px;
-            border: 1px solid rgba(109, 62, 71, 0.2);
+            border: 1px solid var(--secondary);
+            border-radius: 20px;
         }
 
         .btn-secondary {
@@ -415,11 +484,14 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             font-weight: 400;
+            border-radius: 50px;
         }
 
         .btn-secondary:hover {
             background: var(--primary);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .about-section {
@@ -533,6 +605,7 @@
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
+            border-radius: 25px;
         }
 
         .close-modal {
@@ -567,6 +640,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            border-radius: 20px;
         }
 
         .calendly-container p {
@@ -580,7 +654,8 @@
         }
 
         @media (max-width: 1024px) {
-            .categories-grid {
+            .categories-grid,
+            .blog-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
@@ -603,6 +678,7 @@
             }
 
             .categories-grid,
+            .blog-grid,
             .pro-grid,
             .about-grid,
             .footer-content {
@@ -628,33 +704,118 @@
             </div>
             <ul>
                 <li><a onclick="showHome()">Accueil</a></li>
-                <li><a onclick="showSection('categories')">Accompagnements</a></li>
+                <li><a onclick="showSection('blog')">Nos accompagnements</a></li>
+                <li><a onclick="showSection('trouver-pro')">Trouver un professionnel</a></li>
                 <li><a onclick="showSection('apropos')">Qui sommes-nous</a></li>
                 <li><a onclick="openModal()">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Page d'accueil -->
     <div id="homePage">
         <section class="hero">
             <div class="hero-content">
                 <h1>Votre accompagnement vers la vie</h1>
                 <p>Douceur et bienveillance à l'honneur.<br>Plongez dans cet accompagnement unique.</p>
-                <button class="btn-primary" onclick="showSection('categories')">Découvrir nos accompagnements</button>
+                <button class="btn-primary" onclick="showSection('blog')">Découvrir nos accompagnements</button>
             </div>
         </section>
 
-        <section class="section" id="categories">
+        <section class="section" id="blog">
             <div class="container">
                 <h2 class="section-title">Nos accompagnements</h2>
-                <p class="section-subtitle">Chaque parcours est unique, et c'est cette singularité que nous célébrons</p>
+                <p class="section-subtitle">Découvrez tous les professionnels qui peuvent vous accompagner dans votre parcours</p>
+                
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">🤱</div>
+                        <div class="blog-content">
+                            <span class="blog-category">Accompagnement</span>
+                            <h3>Le rôle de la doula : un soutien précieux</h3>
+                            <p class="blog-excerpt">La doula est une professionnelle qui accompagne les futures et jeunes mères de manière non médicale. Elle offre un soutien émotionnel, physique et informationnel continu avant, pendant et après l'accouchement...</p>
+                            <div class="blog-meta">
+                                <span>📅 8 min de lecture</span>
+                                <a href="#" class="read-more">Lire l'article →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">👨‍⚕️</div>
+                        <div class="blog-content">
+                            <span class="blog-category">PMA & Fertilité</span>
+                            <h3>Le gynécologue spécialisé en PMA</h3>
+                            <p class="blog-excerpt">Découvrez comment le gynécologue spécialiste en PMA vous accompagne tout au long de votre parcours vers la parentalité, des premiers examens aux protocoles de FIV...</p>
+                            <div class="blog-meta">
+                                <span>📅 5 min de lecture</span>
+                                <a href="#" class="read-more">Lire l'article →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">🤰</div>
+                        <div class="blog-content">
+                            <span class="blog-category">Grossesse</span>
+                            <h3>La sage-femme : votre alliée pendant la grossesse</h3>
+                            <p class="blog-excerpt">Accompagnement global, préparation à la naissance, suivi post-natal... Tout savoir sur ce métier essentiel qui vous suit de A à Z...</p>
+                            <div class="blog-meta">
+                                <span>📅 7 min de lecture</span>
+                                <a href="#" class="read-more">Lire l'article →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">🧘</div>
+                        <div class="blog-content">
+                            <span class="blog-category">Bien-être</span>
+                            <h3>L'hypnose périnatale : un accompagnement en douceur</h3>
+                            <p class="blog-excerpt">Gestion du stress, préparation mentale, accouchement serein... Les bienfaits de l'hypnose pendant la grossesse et comment elle peut vous aider...</p>
+                            <div class="blog-meta">
+                                <span>📅 6 min de lecture</span>
+                                <a href="#" class="read-more">Lire l'article →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">🧠</div>
+                        <div class="blog-content">
+                            <span class="blog-category">Psychologie</span>
+                            <h3>Le psychologue périnatal : un soutien essentiel</h3>
+                            <p class="blog-excerpt">Parcours PMA difficile, dépression post-partum, deuil périnatal... Quand et pourquoi consulter un psychologue spécialisé en périnatalité...</p>
+                            <div class="blog-meta">
+                                <span>📅 7 min de lecture</span>
+                                <a href="#" class="read-more">Lire l'article →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">👶</div>
+                        <div class="blog-content">
+                            <span class="blog-category">Post-partum</span>
+                            <h3>La consultante en lactation : pour un allaitement réussi</h3>
+                            <p class="blog-excerpt">Conseils personnalisés, résolution de difficultés, accompagnement bienveillant... Tout sur ce métier qui aide les mamans à vivre sereinement leur allaitement...</p>
+                            <div class="blog-meta">
+                                <span>📅 5 min de lecture</span>
+                                <a href="#" class="read-more">Lire l'article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="trouver-pro" style="background: var(--light);">
+            <div class="container">
+                <h2 class="section-title">Trouver un professionnel</h2>
+                <p class="section-subtitle">Recherchez le praticien qui correspond à vos besoins</p>
                 
                 <div class="categories-grid">
                     <div class="category-card" onclick="showCategory('pma')">
-                        <div class="category-image pma-image">
-                            <img src="logopmaa.png" alt="PMA & Fertilité" class="category-img"> 
-                        </div>
+                        <div class="category-image">🏥</div>
                         <div class="category-content">
                             <h3>PMA & Fertilité</h3>
                             <p>Un accompagnement médical et émotionnel tout au long de votre parcours vers la parentalité</p>
@@ -662,9 +823,7 @@
                     </div>
 
                     <div class="category-card" onclick="showCategory('grossesse')">
-                        <div class="category-image grossesse-image">
-                             <img src="logogrossesse.png" alt=" Suivi de grossesse" class="category-img">
-                         </div>
+                        <div class="category-image">🤰</div>
                         <div class="category-content">
                             <h3>Suivi de grossesse</h3>
                             <p>Un suivi personnalisé et bienveillant pour vivre sereinement votre grossesse</p>
@@ -672,9 +831,7 @@
                     </div>
 
                     <div class="category-card" onclick="showCategory('bienetre')">
-                        <div class="category-image bienetre">
-                            <img src="logobienetre.png" alt=" Suivi de grossesse" class="category-img">
-                        </div>
+                        <div class="category-image">🧘</div>
                         <div class="category-content">
                             <h3>Bien-être périnatal</h3>
                             <p>Des pratiques douces pour vous accompagner vers l'harmonie et la sérénité</p>
@@ -682,9 +839,7 @@
                     </div>
 
                     <div class="category-card" onclick="showCategory('accompagnement')">
-                        <div class="category-image accompagnement">
-                            <img src="logoaccompagnement.png" alt="Accompagnement" class="category-img">
-                        </div>  
+                        <div class="category-image">💆</div>
                         <div class="category-content">
                             <h3>Accompagnement global</h3>
                             <p>Un soutien holistique pour votre corps et votre esprit pendant cette période unique</p>
@@ -692,9 +847,7 @@
                     </div>
 
                     <div class="category-card" onclick="showCategory('psychologie')">
-                        <div class="category-image psychologie">
-                            <img src="logosoutien.png" alt="Psychologie" class="category-img">
-                        </div>
+                        <div class="category-image">🧠</div>
                         <div class="category-content">
                             <h3>Soutien psychologique</h3>
                             <p>Un espace d'écoute et de parole pour traverser cette aventure émotionnelle</p>
@@ -746,7 +899,6 @@
         </section>
     </div>
 
-    <!-- Page catégorie -->
     <div id="categoryPage" class="hidden">
         <div class="breadcrumb">
             <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp; <span id="breadcrumbCategory"></span>
@@ -760,7 +912,6 @@
         </section>
     </div>
 
-    <!-- Page liste professionnels -->
     <div id="professionalsPage" class="hidden">
         <div class="breadcrumb">
             <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp; 
@@ -785,8 +936,8 @@
             <div class="footer-section">
                 <h3>Navigation</h3>
                 <ul>
-                    <li><a href="#" onclick="showHome()">Accueil</a></li>
-                    <li><a href="#" onclick="showSection('categories')">Nos accompagnements</a></li>
+                    <li><a href="#" onclick="showSection('blog')">Nos accompagnements</a></li>
+                    <li><a href="#" onclick="showSection('trouver-pro')">Trouver un professionnel</a></li>
                     <li><a href="#">Devenir partenaire</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
