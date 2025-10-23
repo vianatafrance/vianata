@@ -16,10 +16,8 @@
             --primary: #8A7B6F;
             --primary-dark: #6D5F54;
             --secondary: #E8E3DF;
-            --accent: #B8AFA5;
             --light: #F8F6F4;
             --white: #FFFFFF;
-            --bg-main: #FFFFFF;
             --text: #4A4038;
             --text-light: #8A7A70;
         }
@@ -28,7 +26,7 @@
             font-family: 'Montserrat', sans-serif;
             line-height: 1.8;
             color: var(--text);
-            background: var(--bg-main);
+            background: var(--white);
         }
 
         h1, h2, h3, h4 {
@@ -100,7 +98,6 @@
             justify-content: center;
             text-align: center;
             margin-top: 80px;
-            position: relative;
         }
 
         .hero-content {
@@ -294,7 +291,6 @@
         .category-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            border-color: var(--accent);
         }
 
         .category-image {
@@ -667,7 +663,7 @@
             .blog-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+           
             .pro-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -681,7 +677,7 @@
             nav ul {
                 display: none;
             }
-            
+           
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -734,7 +730,7 @@
             <div class="container">
                 <h2 class="section-title">Nos accompagnements</h2>
                 <p class="section-subtitle">Découvrez tous les professionnels qui peuvent vous accompagner dans votre parcours</p>
-                
+               
                 <div class="blog-grid">
                     <div class="blog-card">
                         <div class="blog-image">🤱</div>
@@ -821,7 +817,7 @@
             <div class="container">
                 <h2 class="section-title">Trouver un professionnel</h2>
                 <p class="section-subtitle">Recherchez le praticien qui correspond à vos besoins</p>
-                
+               
                 <div class="categories-grid">
                     <div class="category-card" onclick="showCategory('pma')">
                         <div class="category-image">
@@ -888,10 +884,11 @@
             <div class="container">
                 <h2 class="section-title">Pourquoi nous choisir</h2>
                 <p class="section-subtitle">Parce que votre parcours mérite un accompagnement d'exception</p>
-                
+               
                 <div class="about-grid">
                     <div class="about-item">
-                        <div class="about-icon">✨</div>                        <h3>Professionnels qualifiés</h3>
+                        <div class="about-icon">✨</div>
+                        <h3>Professionnels qualifiés</h3>
                         <p>Des experts passionnés, formés et dévoués à votre bien-être</p>
                     </div>
 
@@ -917,12 +914,11 @@
         </section>
     </div>
 
-    <!-- Page catégorie -->
     <div id="categoryPage" class="hidden">
         <div class="breadcrumb">
             <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp; <span id="breadcrumbCategory"></span>
         </div>
-        
+       
         <section class="section">
             <div class="container">
                 <h2 class="section-title" id="categoryTitle"></h2>
@@ -931,14 +927,13 @@
         </section>
     </div>
 
-    <!-- Page liste professionnels -->
     <div id="professionalsPage" class="hidden">
         <div class="breadcrumb">
-            <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp; 
-            <a onclick="goBackToCategory()" id="breadcrumbCat2"></a> &nbsp;/&nbsp; 
+            <a onclick="showHome()">Accueil</a> &nbsp;/&nbsp;
+            <a onclick="goBackToCategory()" id="breadcrumbCat2"></a> &nbsp;/&nbsp;
             <span id="breadcrumbSpecialty"></span>
         </div>
-        
+       
         <section class="professionals-section">
             <div class="container">
                 <h2 class="section-title" id="specialtyTitle"></h2>
@@ -957,7 +952,7 @@
                 <h3>Navigation</h3>
                 <ul>
                     <li><a href="#" onclick="showHome()">Accueil</a></li>
-                    <li><a href="#" onclick="showSection('categories')">Nos accompagnements</a></li>
+                    <li><a href="#" onclick="showSection('blog')">Nos accompagnements</a></li>
                     <li><a href="#">Devenir partenaire</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
@@ -987,7 +982,7 @@
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2>Prendre rendez-vous</h2>
             <p id="proName" style="color: var(--primary); margin-bottom: 2rem; font-size: 1.1rem;"></p>
-            
+           
             <div class="calendly-container">
                 <div>
                     <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Intégration avec votre outil de planning</p>
@@ -1094,24 +1089,27 @@
         function showSection(sectionId) {
             showHome();
             setTimeout(() => {
-                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
             }, 100);
         }
 
         function showCategory(categoryId) {
             currentCategory = categoryId;
             const category = categories[categoryId];
-            
+           
             document.getElementById('homePage').classList.add('hidden');
             document.getElementById('categoryPage').classList.remove('hidden');
             document.getElementById('professionalsPage').classList.add('hidden');
-            
+           
             document.getElementById('breadcrumbCategory').textContent = category.title;
             document.getElementById('categoryTitle').textContent = category.title;
-            
+           
             const specialtiesList = document.getElementById('specialtiesList');
             specialtiesList.innerHTML = '';
-            
+           
             category.specialties.forEach(specialty => {
                 const card = document.createElement('div');
                 card.className = 'specialty-card';
@@ -1126,26 +1124,26 @@
                 `;
                 specialtiesList.appendChild(card);
             });
-            
+           
             window.scrollTo(0, 0);
         }
 
         function showProfessionals(specialtyName) {
             currentSpecialty = specialtyName;
-            
+           
             document.getElementById('homePage').classList.add('hidden');
             document.getElementById('categoryPage').classList.add('hidden');
             document.getElementById('professionalsPage').classList.remove('hidden');
-            
+           
             document.getElementById('breadcrumbCat2').textContent = categories[currentCategory].title;
             document.getElementById('breadcrumbSpecialty').textContent = specialtyName;
             document.getElementById('specialtyTitle').textContent = specialtyName;
-            
+           
             const prosList = document.getElementById('prosList');
             prosList.innerHTML = '';
-            
+           
             const professionals = professionalsBySpecialty[specialtyName] || [];
-            
+           
             if (professionals.length === 0) {
                 prosList.innerHTML = `
                     <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
@@ -1175,7 +1173,7 @@
                     prosList.appendChild(card);
                 });
             }
-            
+           
             window.scrollTo(0, 0);
         }
 
