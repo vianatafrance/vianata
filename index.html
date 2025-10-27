@@ -1070,6 +1070,39 @@
             ],
             "Doulas": [
                 {initials: "AM", name: "Anne Martin", specialty: "Doula certifiée", location: "Nantes Nord", rating: 5, reviews: 56, tags: ["Accompagnement global", "Post-natal", "Écoute"]}
+                 {
+        initials: "HP", 
+        name: "Hélène Poughon", 
+        specialty: "Doula - Om Doula", 
+        location: "Lille et environs", 
+        rating: 5, 
+        reviews: 45, 
+        tags: ["Grossesse sereine", "Accouchement", "Post-partum", "Allaitement", "Écoute"],
+        description: "Doula naturelle, souriante et bienveillante. Accompagnement personnalisé avant, pendant et après l'accouchement pour une expérience sereine et respectée.",
+        formations: [
+            "Formation Cybèle Doula et coach périnatal (2021-2022)",
+            "Séminaire Physiologie de la naissance avec Michel Odent",
+            "Diplôme de sociologie - ULB (2013)"
+        ],
+        specialites: [
+            "Accompagnement grossesse",
+            "Préparation à l'accouchement",
+            "Soutien post-partum",
+            "Marraine d'allaitement",
+            "Accompagnement du couple",
+            "Soutien à la fratrie"
+        ],
+        methodes: ["Écoute active", "Polarité", "Rebozo", "EFT"],
+        tarifs: "À partir de 60€/séance",
+        contact: {
+            site: "https://omdoula.fr",
+            email: "contact@omdoula.fr",
+            tel: "Sur rendez-vous"
+        },
+        presentation: "Je m'appelle Hélène, j'ai 34 ans et je suis doula sur Lille et ses environs. Mon rôle est de créer un espace sécure pour vous permettre de vous livrer en confiance et sans jugement. J'accompagne tous les couples sans distinction.",
+        valeurs: ["Féminisme", "Écologie", "Altruisme", "Bienveillance"]
+    }
+],
             ],
             "Psychologues périnataux": [
                 {initials: "PD", name: "Pierre Durand", specialty: "Psychologue périnatal", location: "Toulouse Capitole", rating: 5, reviews: 83, tags: ["Soutien PMA", "Couples", "Post-partum"]}
@@ -1129,54 +1162,92 @@
         }
 
         function showProfessionals(specialtyName) {
-            currentSpecialty = specialtyName;
-           
-            document.getElementById('homePage').classList.add('hidden');
-            document.getElementById('categoryPage').classList.add('hidden');
-            document.getElementById('professionalsPage').classList.remove('hidden');
-           
-            document.getElementById('breadcrumbCat2').textContent = categories[currentCategory].title;
-            document.getElementById('breadcrumbSpecialty').textContent = specialtyName;
-            document.getElementById('specialtyTitle').textContent = specialtyName;
-           
-            const prosList = document.getElementById('prosList');
-            prosList.innerHTML = '';
-           
-            const professionals = professionalsBySpecialty[specialtyName] || [];
-           
-            if (professionals.length === 0) {
-                prosList.innerHTML = `
-                    <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
-                        <p style="font-size: 1.2rem; color: var(--text-light); font-weight: 300;">Professionnels à venir dans cette catégorie</p>
-                        <p style="color: var(--text-light); margin-top: 1rem; font-weight: 300;">Nous enrichissons régulièrement notre annuaire</p>
-                    </div>
-                `;
-            } else {
-                professionals.forEach(pro => {
-                    const card = document.createElement('div');
-                    card.className = 'pro-card';
-                    card.innerHTML = `
-                        <div class="pro-image">
-                            <div class="pro-avatar">${pro.initials}</div>
-                        </div>
-                        <div class="pro-content">
-                            <h3>${pro.name}</h3>
-                            <div class="pro-specialty">${pro.specialty}</div>
-                            <div class="pro-location">📍 ${pro.location}</div>
-                            <div class="pro-rating">${'⭐'.repeat(pro.rating)} (${pro.reviews} avis)</div>
+    currentSpecialty = specialtyName;
+    
+    document.getElementById('homePage').classList.add('hidden');
+    document.getElementById('categoryPage').classList.add('hidden');
+    document.getElementById('professionalsPage').classList.remove('hidden');
+    
+    document.getElementById('breadcrumbCat2').textContent = categories[currentCategory].title;
+    document.getElementById('breadcrumbSpecialty').textContent = specialtyName;
+    document.getElementById('specialtyTitle').textContent = specialtyName;
+    
+    const prosList = document.getElementById('prosList');
+    prosList.innerHTML = '';
+    
+    const professionals = professionalsBySpecialty[specialtyName] || [];
+    
+    if (professionals.length === 0) {
+        prosList.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
+                <p style="font-size: 1.2rem; color: var(--text-light); font-weight: 300;">Professionnels à venir dans cette catégorie</p>
+                <p style="color: var(--text-light); margin-top: 1rem; font-weight: 300;">Nous enrichissons régulièrement notre annuaire</p>
+            </div>
+        `;
+    } else {
+        professionals.forEach(pro => {
+            const card = document.createElement('div');
+            card.className = 'pro-card';
+                   let cardHTML = `
+                <div class="pro-image">
+                    <div class="pro-avatar">${pro.initials}</div>
+                </div>
+                <div class="pro-content">
+                    <h3>${pro.name}</h3>
+                    <div class="pro-specialty">${pro.specialty}</div>
+                    <div class="pro-location">📍 ${pro.location}</div>
+                    <div class="pro-rating">${'⭐'.repeat(pro.rating)} (${pro.reviews} avis)</div
                             <div class="pro-tags">
                                 ${pro.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                            </div>
-                            <button class="btn-secondary" onclick="openBooking('${pro.name}')">Prendre rendez-vous</button>
-                        </div>
-                    `;
-                    prosList.appendChild(card);
-                });
+                    if (pro.specialites && pro.specialites.length > 0) {
+                cardHTML += `
+                    <div style="margin: 1.5rem 0;">
+                        <strong style="color: var(--primary); font-size: 0.85rem;">Spécialités :</strong>
+                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem;">
+                            ${pro.specialites.slice(0, 4).map(spec => 
+                                `<li style="color: var(--text-light); font-size: 0.85rem; padding: 0.2rem 0;">• ${spec}</li>`
+                            ).join('')}
+                        </ul>
+                    </div>
+                `;
             }
-           
-            window.scrollTo(0, 0);
-        }
-
+            cardHTML += `
+                <div class="pro-tags">
+                    ${pro.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+            `;
+            if (pro.tarifs) {
+                cardHTML += `
+                    <div style="color: var(--primary); font-weight: 500; margin: 1rem 0; font-size: 0.9rem;">
+                        💰 ${pro.tarifs}
+                    </div>
+                `;
+            }
+                          cardHTML += `
+                <button class="btn-secondary" onclick="openBooking('${pro.name}')">Prendre rendez-vous</button>
+            `;
+            
+            // Si le pro a un site web
+            if (pro.contact && pro.contact.site) {
+                cardHTML += `
+                    <a href="${pro.contact.site}" target="_blank" 
+                       style="display: block; text-align: center; margin-top: 1rem; color: var(--primary); 
+                              text-decoration: none; font-size: 0.85rem; transition: color 0.3s;"
+                       onmouseover="this.style.color='var(--primary-dark)'" 
+                       onmouseout="this.style.color='var(--primary)'">
+                        🌐 Voir le site web
+                    </a>
+                `;
+            }
+            
+            cardHTML += `</div>`;
+            card.innerHTML = cardHTML;
+            prosList.appendChild(card);
+        });
+    }
+    
+    window.scrollTo(0, 0);
+}
         function goBackToCategory() {
             if (currentCategory) {
                 showCategory(currentCategory);
