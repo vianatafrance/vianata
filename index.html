@@ -168,111 +168,6 @@
             letter-spacing: 1px;
         }
 
-        .breadcrumb {
-            padding: 2rem 3rem;
-            background: var(--light);
-            margin-top: 80px;
-            font-size: 0.85rem;
-            color: var(--text-light);
-            letter-spacing: 1px;
-        }
-
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 400;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .blog-card {
-            background: var(--white);
-            overflow: hidden;
-            transition: transform 0.5s, box-shadow 0.3s;
-            cursor: pointer;
-            border: 1px solid var(--secondary);
-            border-radius: 25px;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            border-radius: 25px 25px 0 0;
-        }
-
-        .blog-content {
-            padding: 2rem;
-        }
-
-        .blog-category {
-            display: inline-block;
-            background: var(--light);
-            color: var(--primary);
-            padding: 0.3rem 1rem;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .blog-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text);
-            font-weight: 400;
-            line-height: 1.4;
-        }
-
-        .blog-excerpt {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .read-more {
-            color: var(--primary);
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
-        }
-
-        .read-more:hover {
-            gap: 1rem;
-        }
-
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -302,13 +197,6 @@
             justify-content: center;
             font-size: 5rem;
             border-radius: 30px 30px 0 0;
-            overflow: hidden;
-        }
-
-        .category-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .category-content {
@@ -328,222 +216,6 @@
             font-size: 0.95rem;
             line-height: 1.8;
             font-weight: 300;
-        }
-
-        .specialties-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .specialty-card {
-            background: var(--white);
-            padding: 3rem;
-            border: 1px solid var(--secondary);
-            border-radius: 25px;
-            transition: all 0.4s;
-            cursor: pointer;
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-        }
-
-        .specialty-card:hover {
-            border-color: var(--primary);
-            background: var(--light);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-        }
-
-        .specialty-icon {
-            font-size: 3rem;
-            flex-shrink: 0;
-        }
-
-        .specialty-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-            color: var(--text);
-            font-weight: 400;
-        }
-
-        .specialty-info p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .specialty-count {
-            font-size: 0.85rem;
-            color: var(--primary);
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        .professionals-section {
-            background: var(--light);
-            padding: 6rem 3rem;
-        }
-
-        .pro-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .pro-card {
-            background: var(--white);
-            overflow: hidden;
-            border: 1px solid var(--secondary);
-            border-radius: 25px;
-            transition: all 0.4s;
-            min-height: 750px;
-        }
-
-        .pro-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .pro-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 25px 25px 0 0;
-        }
-
-        .pro-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            border: 3px solid var(--white);
-        }
-
-        .pro-content {
-            padding: 2rem;
-            max-height: none;
-        }
-
-        .pro-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-            font-weight: 400;
-        }
-
-        .pro-specialty {
-            color: var(--primary);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .pro-location {
-            color: var(--text-light);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        .pro-rating {
-            color: var(--primary);
-            margin: 1rem 0;
-            font-size: 0.9rem;
-        }
-
-        .pro-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1.5rem 0;
-        }
-
-        .tag {
-            background: var(--light);
-            padding: 0.4rem 1rem;
-            font-size: 0.8rem;
-            color: var(--text);
-            letter-spacing: 0.5px;
-            border: 1px solid var(--secondary);
-            border-radius: 20px;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            padding: 1rem 2rem;
-            width: 100%;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-weight: 400;
-            border-radius: 50px;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .pro-content p[style*="italic"] {
-            background: var(--light);
-            padding: 1rem;
-            border-left: 3px solid var(--primary);
-            border-radius: 0 10px 10px 0;
-        }
-
-        .pro-content ul {
-            background: var(--light);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 0.5rem !important;
-        }
-
-        .pro-content ul li {
-            transition: transform 0.2s;
-        }
-
-        .pro-content ul li:hover {
-            transform: translateX(5px);
-            color: var(--primary) !important;
-        }
-
-        .pro-content div[style*="💰"] {
-            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
-            padding: 0.8rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .pro-content a[href*="http"] {
-            display: inline-block;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            background: var(--light);
-            border-radius: 20px;
-            margin-top: 1rem;
-        }
-
-        .pro-content a[href*="http"]:hover {
-            background: var(--primary);
-            color: white !important;
-            transform: translateY(-2px);
         }
 
         .about-section {
@@ -637,81 +309,12 @@
             opacity: 0.7;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(74, 64, 56, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: var(--white);
-            padding: 4rem;
-            max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            border-radius: 25px;
-        }
-
-        .close-modal {
-            float: right;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--text-light);
-            transition: color 0.3s;
-            font-weight: 300;
-        }
-
-        .close-modal:hover {
-            color: var(--text);
-        }
-
-        .modal h2 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--text);
-            margin-bottom: 2rem;
-            font-weight: 400;
-            font-size: 2.5rem;
-        }
-
-        .calendly-container {
-            margin-top: 2rem;
-            min-height: 500px;
-            border: 1px solid var(--secondary);
-            padding: 3rem;
-            background: var(--light);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-        }
-
-        .calendly-container p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
         .hidden {
             display: none !important;
         }
 
         @media (max-width: 1024px) {
-            .categories-grid,
-            .blog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-           
-            .pro-grid {
+            .categories-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -730,24 +333,14 @@
             }
 
             .categories-grid,
-            .blog-grid,
-            .pro-grid,
             .about-grid,
             .footer-content {
                 grid-template-columns: 1fr;
             }
 
-            .specialties-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav, .section, .professionals-section, .about-section, footer {
+            nav, .section, .about-section, footer {
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
-            }
-
-            .pro-card {
-                min-height: auto;
             }
         }
     </style>
@@ -760,107 +353,19 @@
             </div>
             <ul>
                 <li><a onclick="showHome()">Accueil</a></li>
-                <li><a onclick="showSection('blog')">Nos accompagnements</a></li>
-                <li><a onclick="showSection('trouver-pro')">Trouver un professionnel</a></li>
-                <li><a onclick="showSection('apropos')">Qui sommes-nous</a></li>
-                <li><a onclick="openModal()">Contact</a></li>
+                <li><a onclick="scrollToSection('trouver-pro')">Trouver un professionnel</a></li>
+                <li><a onclick="scrollToSection('apropos')">Qui sommes-nous</a></li>
+                <li><a onclick="alert('Formulaire de contact à venir')">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="homePage">
+    <div id="mainContent">
         <section class="hero">
             <div class="hero-content">
                 <h1>Votre accompagnement vers la vie</h1>
                 <p>Douceur et bienveillance à l'honneur.<br>Plongez dans cet accompagnement unique.</p>
-                <button class="btn-primary" onclick="showSection('blog')">Découvrir nos accompagnements</button>
-            </div>
-        </section>
-
-        <section class="section" id="blog">
-            <div class="container">
-                <h2 class="section-title">Nos accompagnements</h2>
-                <p class="section-subtitle">Découvrez tous les professionnels qui peuvent vous accompagner dans votre parcours</p>
-               
-                <div class="blog-grid">
-                    <div class="blog-card">
-                        <div class="blog-image">🤱</div>
-                        <div class="blog-content">
-                            <span class="blog-category">Accompagnement</span>
-                            <h3>Le rôle de la doula : un soutien précieux</h3>
-                            <p class="blog-excerpt">La doula est une professionnelle qui accompagne les futures et jeunes mères de manière non médicale. Elle offre un soutien émotionnel, physique et informationnel continu...</p>
-                            <div class="blog-meta">
-                                <span>📅 8 min</span>
-                                <a href="#" class="read-more">Lire →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">👨‍⚕️</div>
-                        <div class="blog-content">
-                            <span class="blog-category">PMA & Fertilité</span>
-                            <h3>Le gynécologue spécialisé en PMA</h3>
-                            <p class="blog-excerpt">Découvrez comment le gynécologue spécialiste en PMA vous accompagne tout au long de votre parcours vers la parentalité...</p>
-                            <div class="blog-meta">
-                                <span>📅 5 min</span>
-                                <a href="#" class="read-more">Lire →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">🤰</div>
-                        <div class="blog-content">
-                            <span class="blog-category">Grossesse</span>
-                            <h3>La sage-femme : votre alliée</h3>
-                            <p class="blog-excerpt">Accompagnement global, préparation à la naissance, suivi post-natal... Tout savoir sur ce métier essentiel...</p>
-                            <div class="blog-meta">
-                                <span>📅 7 min</span>
-                                <a href="#" class="read-more">Lire →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">🧘</div>
-                        <div class="blog-content">
-                            <span class="blog-category">Bien-être</span>
-                            <h3>L'hypnose périnatale en douceur</h3>
-                            <p class="blog-excerpt">Gestion du stress, préparation mentale, accouchement serein... Les bienfaits de l'hypnose pendant la grossesse...</p>
-                            <div class="blog-meta">
-                                <span>📅 6 min</span>
-                                <a href="#" class="read-more">Lire →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">🧠</div>
-                        <div class="blog-content">
-                            <span class="blog-category">Psychologie</span>
-                            <h3>Le psychologue périnatal</h3>
-                            <p class="blog-excerpt">Parcours PMA difficile, dépression post-partum, deuil périnatal... Quand et pourquoi consulter...</p>
-                            <div class="blog-meta">
-                                <span>📅 7 min</span>
-                                <a href="#" class="read-more">Lire →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">👶</div>
-                        <div class="blog-content">
-                            <span class="blog-category">Post-partum</span>
-                            <h3>La consultante en lactation</h3>
-                            <p class="blog-excerpt">Conseils personnalisés, résolution de difficultés, accompagnement bienveillant pour votre allaitement...</p>
-                            <div class="blog-meta">
-                                <span>📅 5 min</span>
-                                <a href="#" class="read-more">Lire →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="btn-primary" onclick="scrollToSection('trouver-pro')">Découvrir nos accompagnements</button>
             </div>
         </section>
 
@@ -870,76 +375,147 @@
                 <p class="section-subtitle">Recherchez le praticien qui correspond à vos besoins</p>
                
                 <div class="categories-grid">
-                    <div class="category-card" onclick="showCategory('pma')">
-                        <div class="category-image">
-                            <img src="logopmaa.png" alt="PMA & Fertilité" class="category-img">
-                        </div>
+                    <div class="category-card" onclick="alert('Section PMA à venir')">
+                        <div class="category-image">🏥</div>
                         <div class="category-content">
                             <h3>PMA & Fertilité</h3>
                             <p>Un accompagnement médical et émotionnel tout au long de votre parcours vers la parentalité</p>
                         </div>
                     </div>
 
-                    <div class="category-card" onclick="showCategory('grossesse')">
-                        <div class="category-image">
-                            <img src="logogrossesse.png" alt="Suivi de grossesse" class="category-img">
-                        </div>
+                    <div class="category-card" onclick="alert('Section Grossesse à venir')">
+                        <div class="category-image">🤰</div>
                         <div class="category-content">
                             <h3>Suivi de grossesse</h3>
                             <p>Un suivi personnalisé et bienveillant pour vivre sereinement votre grossesse</p>
                         </div>
                     </div>
 
-                    <div class="category-card" onclick="showCategory('bienetre')">
-                        <div class="category-image">
-                            <img src="logobienetre.png" alt="Bien-être" class="category-img">
-                        </div>
+                    <div class="category-card" onclick="alert('Section Bien-être à venir')">
+                        <div class="category-image">🧘</div>
                         <div class="category-content">
                             <h3>Bien-être périnatal</h3>
                             <p>Des pratiques douces pour vous accompagner vers l'harmonie et la sérénité</p>
                         </div>
                     </div>
 
-                    <div class="category-card" onclick="showCategory('accompagnement')">
-                        <div class="category-image">
-                            <img src="logoaccompagnement.png" alt="Accompagnement" class="category-img">
-                        </div>
+                    <div class="category-card" onclick="alert('Section Accompagnement à venir')">
+                        <div class="category-image">💆</div>
                         <div class="category-content">
                             <h3>Accompagnement global</h3>
                             <p>Un soutien holistique pour votre corps et votre esprit pendant cette période unique</p>
                         </div>
                     </div>
 
-                    <div class="category-card" onclick="showCategory('psychologie')">
-                        <div class="category-image">
-                            <img src="logosoutien.png" alt="Soutien psychologique" class="category-img">
+                    <div class="category-card" onclick="alert('Section Psychologie à venir')">
+                        <div class="category-image">🧠</div>
+                        <div class="category-content">
+                            <h3>Soutien psychologique</h3>
+                            <p>Un espace d'écoute et de parole pour traverser cette aventure émotionnelle</p>
                         </div>
-                function goBackToCategory() {
-            if (currentCategory) {
-                showCategory(currentCategory);
+                    </div>
+
+                    <div class="category-card" onclick="alert('Section Post-partum à venir')">
+                        <div class="category-image">👶</div>
+                        <div class="category-content">
+                            <h3>Post-partum</h3>
+                            <p>Un accompagnement tendre pour accueillir bébé et prendre soin de vous</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="apropos">
+            <div class="container">
+                <h2 class="section-title">Pourquoi nous choisir</h2>
+                <p class="section-subtitle">Parce que votre parcours mérite un accompagnement d'exception</p>
+               
+                <div class="about-grid">
+                    <div class="about-item">
+                        <div class="about-icon">✨</div>
+                        <h3>Professionnels qualifiés</h3>
+                        <p>Des experts passionnés, formés et dévoués à votre bien-être</p>
+                    </div>
+
+                    <div class="about-item">
+                        <div class="about-icon">🤝</div>
+                        <h3>Accompagnement sur mesure</h3>
+                        <p>Chaque famille est unique, chaque accompagnement est personnalisé</p>
+                    </div>
+
+                    <div class="about-item">
+                        <div class="about-icon">💫</div>
+                        <h3>Bienveillance</h3>
+                        <p>Un cadre chaleureux et rassurant pour vous sentir en confiance</p>
+                    </div>
+
+                    <div class="about-item">
+                        <div class="about-icon">🌿</div>
+                        <h3>Approche holistique</h3>
+                        <p>Une vision globale de votre santé physique et émotionnelle</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Via Nata</h3>
+                <p>Votre plateforme de référence pour l'accompagnement vers la parentalité. Douceur, bienveillance et expertise.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#" onclick="showHome(); return false;">Accueil</a></li>
+                    <li><a href="#" onclick="scrollToSection('trouver-pro'); return false;">Nos accompagnements</a></li>
+                    <li><a href="#">Devenir partenaire</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>contact@vianata.fr</p>
+                <p>01 23 45 67 89</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Via Nata - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        console.log('✅ JavaScript chargé');
+        
+        function showHome() {
+            console.log('🏠 Retour à l\'accueil');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function scrollToSection(sectionId) {
+            console.log('📍 Scroll vers:', sectionId);
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.error('❌ Section non trouvée:', sectionId);
             }
         }
-
-        function openModal() {
-            document.getElementById('bookingModal').style.display = 'flex';
-            document.getElementById('proName').textContent = 'Nous contacter';
-        }
-
-        function openBooking(proName) {
-            document.getElementById('bookingModal').style.display = 'flex';
-            document.getElementById('proName').textContent = 'Rendez-vous avec ' + proName;
-        }
-
-        function closeModal() {
-            document.getElementById('bookingModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('bookingModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
+        
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ Page chargée - Navigation fonctionnelle');
+        });
     </script>
 </body>
 </html>
