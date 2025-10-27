@@ -696,34 +696,41 @@
 
             nav, .section, .professionals-section, .about-section, footer {
                 padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-        }
-   .pro-content p[style*="italic"] {
+                .votre-classe-manquante {
+    padding-right: 1.5rem;
+}
+
+.pro-content p[style*="italic"] {
     background: var(--light);
     padding: 1rem;
     border-left: 3px solid var(--primary);
     border-radius: 0 10px 10px 0;
 }
+
 .pro-content ul {
     background: var(--light);
     padding: 1rem;
     border-radius: 10px;
     margin-top: 0.5rem !important;
 }
+
 .pro-content ul li {
     transition: transform 0.2s;
 }
+
 .pro-content ul li:hover {
     transform: translateX(5px);
     color: var(--primary) !important;
 }
-.pro-content div[style*="💰"] {
+
+/* CHANGÉ : Utilisez une classe au lieu de l'emoji */
+.pro-content .price-box {
     background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
     padding: 0.8rem;
     border-radius: 10px;
     text-align: center;
 }
+
 .pro-card {
     min-height: 750px; 
 }
@@ -732,6 +739,7 @@
     padding: 2rem; 
     max-height: none;
 }
+
 .pro-content a[href*="http"] {
     display: inline-block;
     transition: all 0.3s;
@@ -740,19 +748,18 @@
     border-radius: 20px;
     margin-top: 1rem;
 }
+
 .pro-content a[href*="http"]:hover {
     background: var(--primary);
     color: white !important;
     transform: translateY(-2px);
 }
+
 @media (max-width: 768px) {
     .pro-card {
         min-height: auto;
     }
 }
-    </style>
-</head>
-<body>
     <header>
         <nav>
             <div class="logo" onclick="showHome()">
